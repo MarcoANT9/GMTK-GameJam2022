@@ -9,4 +9,4 @@
 * Joan "Noir02" García
 * Julían "" Cano
 * Marco "El Medusín" Niño
-* Ricardo "" Camayo 
+* Ricardo "Ricky Parker" Camayo 
