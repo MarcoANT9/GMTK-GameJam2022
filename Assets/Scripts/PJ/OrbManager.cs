@@ -6,9 +6,9 @@ public class OrbManager : MonoBehaviour
 {
     [Header("Orb Placement")]
     // ========================================================
-    // Initialization variables
+    // Orb Initialization variables
     // ========================================================
-    public int nOrbs = 3;
+    public int nOrbs;
 
     public GameObject pjOrb;
 
@@ -55,7 +55,7 @@ public class OrbManager : MonoBehaviour
     {
         dataDiceGameObject = GameObject.Find("GameManager");
         diceData = dataDiceGameObject.GetComponent<DiceData>();
-
+        nOrbs = Random.Range(3, 7);
 
         // Distribute the Ball equally around a circle, transform to Radians
         angle = (360 / nOrbs) * Mathf.Deg2Rad;
