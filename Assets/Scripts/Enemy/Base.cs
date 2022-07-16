@@ -7,10 +7,9 @@ public class Base : MonoBehaviour
     [Header("Basic Stats")]
     private int currentHP;
 
-    private int maxHP = 100;
+    public int maxHP = 100;
 
-    [HideInInspector]
-    public GameObject gameAdmin;
+    private GameObject gameAdmin;
 
     public bool isPlayer = false;
 
@@ -44,9 +43,8 @@ public class Base : MonoBehaviour
             }
             else
             {
-                Debug.Log("Enemy Killed");
-                gameAdmin.SendMessage("incrementDeathCount");
-                gameAdmin.SendMessage("decreaceEnemyCount");
+                gameAdmin.GetComponent<RandomPositionGenerator>().incrementDeathCount();
+                gameAdmin.GetComponent<RandomPositionGenerator>().decreaceEnemyCount();
             }
         }
     }
@@ -58,6 +56,7 @@ public class Base : MonoBehaviour
     void applyDamage(int damage)
     {
         currentHP -= damage;
+
         //Debug.Log (currentHP);
         checkHealth();
     }
@@ -66,9 +65,18 @@ public class Base : MonoBehaviour
     /// Sets Unit HP.
     /// </summary>
     /// <param name="value"> Health Value </param>
-    void setHP(int value)
+    /// void setHP(int value)
+    public void setHP(int value)
     {
         maxHP = value;
         currentHP = value;
+    }
+
+    /// <summary>
+    /// Shows character max HP
+    /// </summary>
+    public void showMaxHP()
+    {
+        Debug.Log("Max HP = " + maxHP);
     }
 }

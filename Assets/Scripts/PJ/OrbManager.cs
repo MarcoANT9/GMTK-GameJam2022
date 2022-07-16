@@ -53,9 +53,13 @@ public class OrbManager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        // Gets Data for the balls
         dataDiceGameObject = GameObject.Find("GameManager");
         diceData = dataDiceGameObject.GetComponent<DiceData>();
         nOrbs = Random.Range(3, 7);
+
+        //minRotationSpeed = 300.0f / nOrbs;
+        //maxRotationSpeed = 1000.0f * (1 / nOrbs);
 
         // Distribute the Ball equally around a circle, transform to Radians
         angle = (360 / nOrbs) * Mathf.Deg2Rad;
@@ -164,7 +168,7 @@ public class OrbManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Accelerate the orbs if cooldown allows it
+    /// Accelerate the orbs
     /// </summary>
     void accelerateBalls()
     {

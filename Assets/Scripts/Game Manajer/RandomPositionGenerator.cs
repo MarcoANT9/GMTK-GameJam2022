@@ -8,37 +8,38 @@ public class RandomPositionGenerator : MonoBehaviour
     // Enemy Characters Prefabs
     // ========================================================
     [Header("NPCs Prefabs")]
-    public GameObject prefabEnemyMelee;
+    public GameObject[] enemyPrefabs = new GameObject[4];
 
-    public GameObject prefabEnemyAdc;
-
-    public GameObject prefabEnemyMage;
-
-    public GameObject prefabEnemySpecialist;
+    private int[] enemyHPValues = { 100, 90, 75, 80 };
 
     // ========================================================
     // Spawn Points
     // ========================================================
     [Header("Spawn Points")]
-    public GameObject spawnPointNort;
+    public Transform[] enemySpawnPoints = new Transform[3];
 
-    //public GameObject SpawnPointEast;
+    private int spawnPoint;
 
-    //public GameObject SpawnPointWest;
-
-    [HideInInspector]
-    public int enemyCount;
+    Vector3 spawnPosition = new Vector3();
 
     [HideInInspector]
-    public int enemyKillCount;
+    public int enemyCount = 0;
+
+    [HideInInspector]
+    public int enemyKillCount = 0;
 
     private int enemyType;
 
-    private int totalEnemies;
+    //private int totalEnemies;
+    private float secondsBetweenSpawns;
+
+    private float elapsedTime = 0.0f;
 
     void Start()
     {
-        totalEnemies = 15;
+        secondsBetweenSpawns = 1.0f;
+
+        //totalEnemies = 15;
         enemyCount = 0;
         enemyKillCount = 0;
     }
@@ -47,18 +48,36 @@ public class RandomPositionGenerator : MonoBehaviour
     // Somewhere within -10.0 and 10.0 (inclusive) on the x-z plane
     void OnGUI()
     {
-        GUI
-            .Button(new Rect(10, 10, 150, 50),
-            ("Total Enemies: " + totalEnemies));
-        GUI.Button(new Rect(10, 80, 100, 50), ("Enemies: " + enemyCount));
-        GUI
-            .Button(new Rect(10, 150, 150, 50),
-            ("Kil Count: " + enemyKillCount));
+        GUI.Button(new Rect(10, 10, 100, 50), ("Enemies: " + enemyCount));
+        GUI.Button(new Rect(10, 80, 150, 50), ("Kil Count: " + enemyKillCount));
     }
 
     void FixedUpdate()
     {
+        //secondsBetweenSpawns = 2.0f;
+        elapsedTime += Time.deltaTime;
 
+        if (elapsedTime > secondsBetweenSpawns && enemyCount < 10)
+        {
+            elapsedTime = 0;
+
+            // Select random spawn point
+            spawnPoint = Random.Range(0, 3);
+            spawnPosition = enemySpawnPoints[spawnPoint].position;
+
+            // Select random type of enemy
+            enemyType = Random.Range(0, 4);
+            GameObject enemySpawned =
+                Instantiate(enemyPrefabs[enemyType],
+                spawnPosition,
+                Quaternion.identity) as
+                GameObject;
+
+            // Adjust HP values according to the type of enemy
+            //int enemyHP = enemyHPValues[enemyType];
+            // Adds to the count of enemies
+            enemyCount++;
+        }
     }
 
     public void incrementDeathCount()
