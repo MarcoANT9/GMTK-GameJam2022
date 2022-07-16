@@ -54,8 +54,9 @@ public class OrbOjbect : MonoBehaviour
     /// Damages an enemy when Orb enters collision with the "Enemy Type".
     /// </summary>
     /// <param name="collision"> Other Element. </param>
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Waaah");
         damageDealtOrb = Random.Range(1, maxValue + 1);
         if (collision.gameObject.tag == "Enemy")
         {
