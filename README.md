@@ -7,6 +7,5 @@
 * Jaime "" Gálvez
 * Jerónimo "WarlikeX" Arteaga
 * Joan "Noir02" García
-* Julían "" Cano
 * Marco "El Medusín" Niño
 * Ricardo "Ricky Parker" Camayo 
