@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2690918717746798357}
   - component: {fileID: 2690918717746798358}
-  - component: {fileID: 2690918717746798356}
   - component: {fileID: 2690918717746798359}
   - component: {fileID: 2690918717746798353}
+  - component: {fileID: 2095491181279193839}
   m_Layer: 0
   m_Name: Square
   m_TagString: Enemy
@@ -85,18 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2690918717746798356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2690918717746798346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a65c980f14a1b5749a0cb1741b87f895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2690918717746798359
 Rigidbody2D:
   serializedVersion: 4
@@ -144,6 +132,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2095491181279193839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690918717746798346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65c980f14a1b5749a0cb1741b87f895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameAdmin: {fileID: 0}
+  isPlayer: 0
 --- !u!1 &2690918717859011551
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +158,7 @@ GameObject:
   - component: {fileID: 2690918717859011545}
   m_Layer: 0
   m_Name: EnemyMelee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,3 +190,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b696c6b031d253144811485ac2ee6c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pjObject: {fileID: 0}

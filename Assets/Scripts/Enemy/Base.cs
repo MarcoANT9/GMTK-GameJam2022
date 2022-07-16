@@ -12,7 +12,6 @@ public class Base : MonoBehaviour
     [HideInInspector]
     public GameObject gameAdmin;
 
-    [HideInInspector]
     public bool isPlayer = false;
 
     // Start is called before the first frame update
@@ -38,16 +37,17 @@ public class Base : MonoBehaviour
             // SFX Here
             // NPC goes splat
             Destroy (gameObject);
-        }
-        if (isPlayer == true)
-        {
-            Debug.Log("ª");
-            gameAdmin.SendMessage("restartGame");
-
-        }
-        else
-        {
-            gameAdmin.SendMessage("incrementDeathCount");
+            if (isPlayer == true)
+            {
+                Debug.Log("ª");
+                gameAdmin.SendMessage("restartGame");
+            }
+            else
+            {
+                Debug.Log("Enemy Killed");
+                gameAdmin.SendMessage("incrementDeathCount");
+                gameAdmin.SendMessage("decreaceEnemyCount");
+            }
         }
     }
 
@@ -58,7 +58,7 @@ public class Base : MonoBehaviour
     void applyDamage(int damage)
     {
         currentHP -= damage;
-        Debug.Log("ay - " + currentHP);
+        //Debug.Log (currentHP);
         checkHealth();
     }
 
@@ -70,14 +70,5 @@ public class Base : MonoBehaviour
     {
         maxHP = value;
         currentHP = value;
-    }
-
-    /// <summary>
-    /// Sets unit as protagonist.
-    /// </summary>
-    /// <param name="value"> Value - True for protagonist.</param>
-    void stPej(bool value)
-    {
-        isPlayer = true;
     }
 }
