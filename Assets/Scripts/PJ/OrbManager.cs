@@ -5,6 +5,9 @@ using UnityEngine;
 public class OrbManager : MonoBehaviour
 {
     [Header("Orb Placement")]
+    // ========================================================
+    // Initialization variables
+    // ========================================================
     public int nOrbs = 3;
 
     public GameObject pjOrb;
@@ -32,23 +35,100 @@ public class OrbManager : MonoBehaviour
 
     private Vector3 currentPosition;
 
+    // ========================================================
+    // Orb Data
+    // ========================================================
+    private GameObject dataDiceGameObject;
+
+    private DiceData diceData;
+
+    private int diceType;
+
+    private int maxValue;
+
+    private Color spriteColor = Color.white;
+
     /// <summary>
     /// Execute at the start
     /// </summary>
     void Start()
     {
+        dataDiceGameObject = GameObject.Find("GameManager");
+        diceData = dataDiceGameObject.GetComponent<DiceData>();
+
+
         // Distribute the Ball equally around a circle, transform to Radians
         angle = (360 / nOrbs) * Mathf.Deg2Rad;
 
         // Create initial 3 Balls
         for (int i = 0; i < nOrbs; i++)
         {
-            Instantiate(pjOrb,
-            new Vector3(radius * Mathf.Cos(i * angle),
-                radius * Mathf.Sin(i * angle),
-                0),
-            Quaternion.identity,
-            transform);
+            GameObject Orb =
+                Instantiate(pjOrb,
+                new Vector3(radius * Mathf.Cos(i * angle),
+                    radius * Mathf.Sin(i * angle),
+                    0),
+                Quaternion.identity,
+                transform) as
+                GameObject;
+
+            // Assign Values to each Orb
+            diceType = Random.Range(1, 101);
+
+            if (diceType <= 10)
+            {
+                // Dice Type
+                diceType = 0;
+
+                // Color / Sprite Select
+                spriteColor = diceData.grayColor;
+                // Maximum dice value
+                maxValue = diceData.D4;
+            }
+            else if (diceType > 10 && diceType <= 30)
+            {
+                // Dice Type
+                diceType = 1;
+
+                // Color / Sprite Select
+                spriteColor = diceData.greenColor;
+                // Maximum dice value
+                maxValue = diceData.D6;
+            }
+            else if (diceType > 30 && diceType <= 60)
+            {
+                // Dice Type
+                diceType = 2;
+
+                // Color / Sprite Select
+                spriteColor = diceData.blueColor;
+                // Maximum dice value
+                maxValue = diceData.D8;
+            }
+            else if (diceType > 60 && diceType <= 90)
+            {
+                // Dice Type
+                diceType = 3;
+
+                // Color / Sprite Select
+                spriteColor = diceData.purpleColor;
+                // Maximum dice value
+                maxValue = diceData.D10;
+            }
+            else
+            {
+                // Dice Type
+                diceType = 4;
+
+                // Color / Sprite Select
+                spriteColor = diceData.yellowColor;
+                // Maximum dice value
+                maxValue = diceData.D20;
+            }
+            
+            Orb.SendMessage("assingColor", spriteColor);
+            Orb.SendMessage("assingMaxValue", maxValue);
+            Orb.SendMessage("assingDiceType", diceType);
         }
 
         target = transform.position;
@@ -74,7 +154,10 @@ public class OrbManager : MonoBehaviour
             if (rotationSpeed < minRotationSpeed)
                 rotationSpeed = minRotationSpeed;
             transform.position =
-                Vector3.MoveTowards(currentPosition, transform.parent.position, transSpeed * Time.deltaTime);
+                Vector3
+                    .MoveTowards(currentPosition,
+                    transform.parent.position,
+                    transSpeed * Time.deltaTime);
         }
 
         // Moves Towards Cursor
@@ -97,6 +180,10 @@ public class OrbManager : MonoBehaviour
     {
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         target.z = transform.position.z;
-        transform.position = Vector3.MoveTowards(transform.position, target, transSpeed * Time.deltaTime);
+        transform.position =
+            Vector3
+                .MoveTowards(transform.position,
+                target,
+                transSpeed * Time.deltaTime);
     }
 }
