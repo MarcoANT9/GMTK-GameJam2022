@@ -6,15 +6,13 @@ public class Base : MonoBehaviour
 {
     [Header("Basic Stats")]
     private int currentHP;
-    private int maxHP;
+    private int maxHP = 100;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHP = 100;
-        currentHP = maxHP;
-        
+        currentHP = maxHP;   
     }
 
     // Update is called once per frame
