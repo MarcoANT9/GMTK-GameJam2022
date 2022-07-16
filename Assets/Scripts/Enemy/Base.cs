@@ -12,7 +12,7 @@ public class Base : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHP = 500;
+        maxHP = 100;
         currentHP = maxHP;
         
     }

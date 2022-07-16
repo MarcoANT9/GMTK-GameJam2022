@@ -56,7 +56,6 @@ public class OrbOjbect : MonoBehaviour
     /// <param name="collision"> Other Element. </param>
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Waaah");
         damageDealtOrb = Random.Range(1, maxValue + 1);
         if (collision.gameObject.tag == "Enemy")
         {
