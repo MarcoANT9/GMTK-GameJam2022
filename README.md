@@ -1,7 +1,11 @@
-# GMTK-GameJam2022
+> # GMTK-GameJam2022
+---
 
+> ## esto es una actualizacion
+---
 
-## Contributors:
+> ## Contributors:
+---
 
 * Diego "DankAbbadon" Ramirez
 * Jaime "" Gálvez
