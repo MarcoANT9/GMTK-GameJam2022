@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float moveSpeed;
+    public float rangeDistance;
+    public bool moveAway;
 
-    // Update is called once per frame
-    void Update()
+    public void Move(GameObject target)
     {
-        
+        // Rotate towards player
+        transform.right = target.transform.position - transform.position;
+
+        // Move towards player
+        this.transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
     }
 }
