@@ -37,7 +37,7 @@ public class RandomPositionGenerator : MonoBehaviour
 
     void Start()
     {
-        secondsBetweenSpawns = 3.0f;
+        secondsBetweenSpawns = 1.5f;
 
         //totalEnemies = 15;
         enemyCount = 0;
@@ -66,7 +66,9 @@ public class RandomPositionGenerator : MonoBehaviour
             spawnPosition = enemySpawnPoints[spawnPoint].position;
 
             // Select random type of enemy
-            enemyType = Random.Range(0, 4);
+            // Value 4 - include specialist
+            // Value 3 - Don't include him
+            enemyType = Random.Range(0, 3);
             GameObject enemySpawned =
                 Instantiate(enemyPrefabs[enemyType],
                 spawnPosition,

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2690918717746798359}
   - component: {fileID: 2690918717746798353}
   - component: {fileID: 2095491181279193839}
+  - component: {fileID: 7452987938825179320}
+  - component: {fileID: 3052154683262348394}
   m_Layer: 0
   m_Name: Square
   m_TagString: Enemy
@@ -146,6 +148,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   isPlayer: 0
+  playerTarget: {fileID: 0}
+--- !u!114 &7452987938825179320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690918717746798346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b696c6b031d253144811485ac2ee6c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  inRange: 0
+  range: 2
+--- !u!114 &3052154683262348394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690918717746798346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d36189fec982b24696bde9da1574cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  isRanged: 0
+  attackSpeed: 1
 --- !u!1 &2690918717859011551
 GameObject:
   m_ObjectHideFlags: 0

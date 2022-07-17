@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8947069349951022584}
   - component: {fileID: 8947069349951022586}
   - component: {fileID: 2642443352981266813}
+  - component: {fileID: 7547884722991794166}
+  - component: {fileID: 7003633531072895799}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Enemy
@@ -137,6 +139,36 @@ MonoBehaviour:
   maxHP: 100
   isPlayer: 0
   playerTarget: {fileID: 0}
+--- !u!114 &7547884722991794166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947069349951022567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b696c6b031d253144811485ac2ee6c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  inRange: 0
+  range: 50
+--- !u!114 &7003633531072895799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947069349951022567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d36189fec982b24696bde9da1574cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7906595897585516547, guid: 2045dc15accf8d844803e57345c1e3d6, type: 3}
+  isRanged: 1
+  attackSpeed: 3
 --- !u!1 &8947069351353987661
 GameObject:
   m_ObjectHideFlags: 0
