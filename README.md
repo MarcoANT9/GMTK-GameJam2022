@@ -74,14 +74,15 @@
 </details>
 
 <details>
-<summary><b>[Hit Sounds](https://assetstore.unity.com/packages/audio/sound-fx/dark-impacts-184396)</b></summary>
+<summary><b> Hit Sounds </b></summary>
+* [Link](https://assetstore.unity.com/packages/audio/sound-fx/dark-impacts-184396)
 * N91music
 * Standard Unity Asset Store EULA
 * Extension Asset
 </details>
 
 <details>
-<summary><b>[Spawn](https://assetstore.unity.com/packages/audio/sound-fx/intergalactic-portal-89506)</b></summary>
+<summary><b> [Spawn](https://assetstore.unity.com/packages/audio/sound-fx/intergalactic-portal-89506)</b></summary>
 * yann
 * Standard Unity Asset Store EULA
 * Extension Asset
