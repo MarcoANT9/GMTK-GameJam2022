@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public GameObject pjObject;
+    public float moveSpeed;
+    public bool inRange;
+    public float range;
+    private GameObject target;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player");
+        inRange = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (Vector2.Distance(transform.position, target.transform.position) <= range)
+            inRange = true;
+        else
+            inRange = false;
+    }
+
+    public void Move()
+    {   if(!inRange)
+            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
     }
 }

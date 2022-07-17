@@ -29,6 +29,11 @@ public class Base : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isPlayer && playerTarget)
+        {
+            transform.up = playerTarget.transform.position - transform.position;
+            SendMessage("Move", playerTarget, SendMessageOptions.DontRequireReceiver);
+        }
     }
 
     /// <summary>
@@ -41,7 +46,6 @@ public class Base : MonoBehaviour
             // Animation Here
             // SFX Here
             // NPC goes splat
-            Destroy (gameObject);
             if (isPlayer == true)
             {
                 Debug.Log("ª");
@@ -49,6 +53,7 @@ public class Base : MonoBehaviour
             }
             else
             {
+                Destroy(transform.parent.gameObject);
                 gameAdmin.GetComponent<RandomPositionGenerator>().incrementDeathCount();
                 gameAdmin.GetComponent<RandomPositionGenerator>().decreaceEnemyCount();
             }
@@ -59,7 +64,7 @@ public class Base : MonoBehaviour
     /// Applies indicated damage to NPC
     /// </summary>
     /// <param name="damage"> Damage done by player´s attack </param>
-    void applyDamage(int damage)
+    public void applyDamage(int damage)
     {
         currentHP -= damage;
 
