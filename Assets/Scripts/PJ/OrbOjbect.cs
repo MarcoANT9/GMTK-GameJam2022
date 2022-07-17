@@ -60,6 +60,8 @@ public class OrbOjbect : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.SendMessage("applyDamage", damageDealtOrb);
+            // Play hit sound
+            Debug.Log("bonk");
         }
     }
 }

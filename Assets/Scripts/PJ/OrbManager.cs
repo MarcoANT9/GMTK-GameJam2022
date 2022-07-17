@@ -60,13 +60,13 @@ public class OrbManager : MonoBehaviour
 
         //minRotationSpeed = 300.0f / nOrbs;
         //maxRotationSpeed = 1000.0f * (1 / nOrbs);
-
         // Distribute the Ball equally around a circle, transform to Radians
         angle = (360 / nOrbs) * Mathf.Deg2Rad;
 
         // Create initial 3 Balls
         for (int i = 0; i < nOrbs; i++)
         {
+            // Create a die.
             GameObject Orb =
                 Instantiate(pjOrb,
                 new Vector3(radius * Mathf.Cos(i * angle),
@@ -76,60 +76,43 @@ public class OrbManager : MonoBehaviour
                 transform) as
                 GameObject;
 
-            // Assign Values to each Orb
+            // Assign Values to each Orb.
             diceType = Random.Range(1, 101);
 
+            // Select type for each die (for die creation).
             if (diceType <= 10)
             {
                 // Dice Type
                 diceType = 0;
-
-                // Color / Sprite Select
-                spriteColor = diceData.grayColor;
-                // Maximum dice value
-                maxValue = diceData.D4;
             }
             else if (diceType > 10 && diceType <= 30)
             {
                 // Dice Type
                 diceType = 1;
-
-                // Color / Sprite Select
-                spriteColor = diceData.greenColor;
-                // Maximum dice value
-                maxValue = diceData.D6;
             }
             else if (diceType > 30 && diceType <= 60)
             {
                 // Dice Type
                 diceType = 2;
-
-                // Color / Sprite Select
-                spriteColor = diceData.blueColor;
-                // Maximum dice value
-                maxValue = diceData.D8;
             }
             else if (diceType > 60 && diceType <= 90)
             {
                 // Dice Type
                 diceType = 3;
-
-                // Color / Sprite Select
-                spriteColor = diceData.purpleColor;
-                // Maximum dice value
-                maxValue = diceData.D10;
             }
             else
             {
                 // Dice Type
                 diceType = 4;
-
-                // Color / Sprite Select
-                spriteColor = diceData.yellowColor;
-                // Maximum dice value
-                maxValue = diceData.D20;
             }
-            
+
+            // Select Color <Cambiar a sprite cuando estén listos>
+            spriteColor = diceData.diceColors[diceType];
+
+            // Select max value of each die
+            maxValue = diceData.diceValues[diceType];
+
+            // Sets up every Orb <No tocar!>
             Orb.SendMessage("assingColor", spriteColor);
             Orb.SendMessage("assingMaxValue", maxValue);
             Orb.SendMessage("assingDiceType", diceType);
