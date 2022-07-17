@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8947069349951022587}
   - component: {fileID: 3376504408944498237}
   - component: {fileID: 3820181329962095746}
+  - component: {fileID: 2642443352981266813}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Enemy
@@ -124,7 +125,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8947069349951022587
+--- !u!114 &2642443352981266813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,6 +168,8 @@ MonoBehaviour:
   moveSpeed: 5
   rangeDistance: 10
   moveAway: 0
+  gameAdmin: {fileID: 7131991390713749711, guid: afddb8eaf1d78e3499c74391591f47a4, type: 3}
+  isPlayer: 0
 --- !u!1 &8947069351353987661
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +181,7 @@ GameObject:
   - component: {fileID: 8947069351353987650}
   m_Layer: 0
   m_Name: EnemyAdc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

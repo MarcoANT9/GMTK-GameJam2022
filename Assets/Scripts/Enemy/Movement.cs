@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float moveSpeed;
     public float rangeDistance;
     public bool moveAway;
+    public GameObject pjObject;
 
     public void Move(GameObject target)
     {

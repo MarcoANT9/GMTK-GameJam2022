@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7131991390713749711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7131991390713749745}
+  - component: {fileID: 7131991390713749746}
+  - component: {fileID: 7131991390713749744}
+  - component: {fileID: 7131991390713749747}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7131991390713749745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131991390713749711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7131991390713749746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131991390713749711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f07378267ff4ec469e8db62fb9729a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7131991390713749744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131991390713749711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3f2cca70636874eb1e353fb93315ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grayColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  greenColor: {r: 0, g: 1, b: 0, a: 1}
+  blueColor: {r: 0, g: 0, b: 1, a: 1}
+  purpleColor: {r: 1, g: 0, b: 1, a: 1}
+  yellowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  D4: 4
+  D6: 6
+  D8: 8
+  D10: 10
+  D20: 20
+--- !u!114 &7131991390713749747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131991390713749711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ae4000fe39b9f4ba72ce26746f721e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 2690918717859011551, guid: f27aef3610b28d94c87b0d2984658f4d, type: 3}
+  - {fileID: 8947069351353987661, guid: ada7d612e8497314ba0bdd3821b7a906, type: 3}
+  - {fileID: 5752355372983954258, guid: 0d67dfa796c3987489f0fa60fa0677cf, type: 3}
+  - {fileID: 7923424900879964154, guid: 12ecf366f68957840be7dee0f72d433c, type: 3}
+  enemySpawnPoints:
+  - {fileID: 4487306638005202649, guid: 8f175a57af992bf43a6e26436508d699, type: 3}
+  - {fileID: 7473287256732219812, guid: 489878c396e427641858e8f1b2796d22, type: 3}
+  - {fileID: 725796411556349018, guid: 8fa65914a3b48d44cadc1860f5b7ff36, type: 3}
+  enemyCount: 0
+  enemyKillCount: 0
