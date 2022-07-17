@@ -28,7 +28,7 @@
 
 ### SFX
 <details>
-<summary><b>[Laser](https://assetstore.unity.com/packages/audio/sound-fx/weapons/free-laser-weapons-214929)</b></summary>
+<summary>[Laser](https://assetstore.unity.com/packages/audio/sound-fx/weapons/free-laser-weapons-214929)</summary>
 * seg 0:15
 * Daniel SoundsGood 
 * Standard Unity Asset Store EULA
@@ -86,4 +86,16 @@
 * yann
 * Standard Unity Asset Store EULA
 * Extension Asset
+</details>
+
+<details>
+<summary><b> About Me</b> 🤔:</summary>
+
+* Master in Science on Industrial Controls from [Unipamplona](https://www.unipamplona.edu.co/maestriacontrolesindustriales/).
+* Industrial Engineer from [Javeriana Cali](https://www.javerianacali.edu.co).
+* Software Engineer from [Holberton School Cali](https://www.holbertoncolombia.com).
+* Insterested in process automation and instrumentation.
+* Interested in videogame mechanics and math-based solutions.
+* I have a lot of non-formal self-taugh knowledge.
+
 </details>
