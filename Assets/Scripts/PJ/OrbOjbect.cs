@@ -13,9 +13,19 @@ public class OrbOjbect : MonoBehaviour
     // Orb Damage.
     private int damageDealtOrb;
 
+    // Orb hit sound
+    public GameObject hitSound;
+
+    // Sprite Renderer
+    private SpriteRenderer orbSpriteRenderer;
+
+    // Sprite List
+    //public Sprite[] SpriteList;
+
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -33,16 +43,35 @@ public class OrbOjbect : MonoBehaviour
     }
 
     /// <summary>
-    /// Select Color/Sprite for the die.
+    /// Select Color/Sprite for the dice.
     /// </summary>
     /// <param name="value"> Color/Sprite for the die. </param>
     public void assingColor(Color value)
     {
-        gameObject.GetComponent<Renderer>().material.color = value;
+        //gameObject.GetComponent<Renderer>().material.color = value;
+        orbSpriteRenderer.material.color = value;
     }
 
     /// <summary>
-    /// Select Type for the die.
+    /// Sets the sprite of the dice
+    /// </summary>
+    /// <param name="newSprite"> Sprite to Assign </param>
+    public void setSprite(Sprite newSprite)
+    {
+        orbSpriteRenderer.sprite = newSprite;
+    }
+    
+    /// <summary>
+    /// Set Sprite Renderer. Because it's needed for some reason
+    /// </summary>
+    /// <param name="newRenderer"> New Renderer </param>
+    public void setSpriteRenderer(SpriteRenderer newRenderer)
+    {
+        orbSpriteRenderer = newRenderer;
+    }
+
+    /// <summary>
+    /// Select Type for the dice.
     /// </summary>
     /// <param name="value"> Die Type... not sure why we need this but there it is. </param>
     public void assingDiceType(int value)
@@ -60,8 +89,9 @@ public class OrbOjbect : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.SendMessage("applyDamage", damageDealtOrb);
+
             // Play hit sound
-            Debug.Log("bonk");
+            Instantiate (hitSound);
         }
     }
 }

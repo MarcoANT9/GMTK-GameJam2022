@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   isPlayer: 1
+  playerTarget: {fileID: 0}
 --- !u!1 &8137091767993533571
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +302,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10.64
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

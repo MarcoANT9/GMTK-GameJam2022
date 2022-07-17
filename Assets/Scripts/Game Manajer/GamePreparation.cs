@@ -33,5 +33,6 @@ public class GamePreparation : MonoBehaviour
         GUI.Label(new Rect(200, 10, 150, 50), ("WASD: Move"));
         GUI.Label(new Rect(200, 50, 150, 50), ("Mouse: Look"));
         GUI.Label(new Rect(200, 90, 150, 50), ("Left Click: Attack"));
+        GUI.Label(new Rect(200, 130, 150, 50), ("Escape: Exit"));
     }
 }
