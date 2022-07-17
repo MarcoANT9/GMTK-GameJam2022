@@ -13,6 +13,9 @@ public class OrbOjbect : MonoBehaviour
     // Orb Damage.
     private int damageDealtOrb;
 
+    // Orb hit sound
+    public GameObject hitSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +64,7 @@ public class OrbOjbect : MonoBehaviour
         {
             collision.gameObject.SendMessage("applyDamage", damageDealtOrb);
             // Play hit sound
-            Debug.Log("bonk");
+            Instantiate(hitSound);
         }
     }
 }
