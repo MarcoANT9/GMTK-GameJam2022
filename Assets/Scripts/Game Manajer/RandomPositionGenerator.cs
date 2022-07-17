@@ -37,7 +37,7 @@ public class RandomPositionGenerator : MonoBehaviour
 
     void Start()
     {
-        secondsBetweenSpawns = 1.0f;
+        secondsBetweenSpawns = 3.0f;
 
         //totalEnemies = 15;
         enemyCount = 0;

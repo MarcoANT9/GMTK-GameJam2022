@@ -14,7 +14,7 @@ public class OrbManager : MonoBehaviour
 
     private float angle;
 
-    private float radius = 3.0f;
+    private float radius = 8.0f;
 
     // ========================================================
     // Orb Rotation Variables
@@ -29,7 +29,7 @@ public class OrbManager : MonoBehaviour
     // ========================================================
     // Orb Translation Variables
     // ========================================================
-    private float transSpeed = 15.0f;
+    private float transSpeed = 50.0f;
 
     private Vector3 target;
 
@@ -48,6 +48,8 @@ public class OrbManager : MonoBehaviour
 
     private Color spriteColor = Color.white;
 
+    private Sprite orbSprite;
+
     /// <summary>
     /// Execute at the start
     /// </summary>
@@ -56,6 +58,7 @@ public class OrbManager : MonoBehaviour
         // Gets Data for the balls
         dataDiceGameObject = GameObject.Find("GameManager");
         diceData = dataDiceGameObject.GetComponent<DiceData>();
+        orbSprite = diceData.diceObjects[0].GetComponent<SpriteRenderer>().sprite;
         nOrbs = Random.Range(3, 7);
 
         //minRotationSpeed = 300.0f / nOrbs;
@@ -112,10 +115,19 @@ public class OrbManager : MonoBehaviour
             // Select max value of each die
             maxValue = diceData.diceValues[diceType];
 
-            // Sets up every Orb <No tocar!>
-            Orb.SendMessage("assingColor", spriteColor);
-            Orb.SendMessage("assingMaxValue", maxValue);
+            // Orb dice type
             Orb.SendMessage("assingDiceType", diceType);
+
+            // Sets up every Orb <No tocar!>
+            // Orb's Color <Don't use when sprite is active>
+            //Orb.SendMessage("assingColor", spriteColor);
+            // Orb Max Value
+            Orb.SendMessage("assingMaxValue", maxValue);
+
+            // Orb's Sprite
+            orbSprite = diceData.diceSpriteArray[diceType];
+            Orb.SendMessage("setSpriteRenderer", Orb.GetComponent<SpriteRenderer>());
+            Orb.SendMessage("setSprite", orbSprite);
         }
 
         target = transform.position;

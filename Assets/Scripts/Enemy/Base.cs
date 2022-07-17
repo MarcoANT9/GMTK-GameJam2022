@@ -41,7 +41,7 @@ public class Base : MonoBehaviour
             // Animation Here
             // SFX Here
             // NPC goes splat
-            Destroy (gameObject);
+            Destroy (transform.parent.gameObject);
             if (isPlayer == true)
             {
                 Debug.Log("ª");
