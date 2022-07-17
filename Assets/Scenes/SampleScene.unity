@@ -476,6 +476,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489878c396e427641858e8f1b2796d22, type: 3}
+--- !u!1 &1930901258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8137091767552961629, guid: d3282f98a0970f04f8865e7ce783243f, type: 3}
+  m_PrefabInstance: {fileID: 1053962423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7131991390683574992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -531,6 +536,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7131991390713749746, guid: afddb8eaf1d78e3499c74391591f47a4, type: 3}
+      propertyPath: targetPlayer
+      value: 
+      objectReference: {fileID: 1930901258}
     - target: {fileID: 7131991390713749747, guid: afddb8eaf1d78e3499c74391591f47a4, type: 3}
       propertyPath: enemySpawnPoints.Array.data[0]
       value: 

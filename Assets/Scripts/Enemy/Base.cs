@@ -13,11 +13,17 @@ public class Base : MonoBehaviour
 
     public bool isPlayer = false;
 
+    private GamePreparation gameData;
+
+    public GameObject playerTarget = null;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHP = maxHP;
         gameAdmin = GameObject.Find("GameManager");
+        gameData = gameAdmin.GetComponent<GamePreparation>();
+        if (isPlayer == false) playerTarget = gameData.targetPlayer;
     }
 
     // Update is called once per frame
